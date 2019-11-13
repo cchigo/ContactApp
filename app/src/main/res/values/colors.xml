@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#ffffff</color>
+    <color name="colorPrimaryDark">#f9fbfc</color>
+    <color name="colorAccent">#9e9fa7</color>
+    <color name="blackFontColor">#000000</color>
+    <color name="lightBlueFont">#a2a3b5</color>
+    <color name="darkBlueFont">#8687a7</color>
+    <color name="darkBlueButton">#2b2b63</color>
+    <color name="contactDetailsHeading">#ceccd8</color>
+    <color name="contactDetailsValue">#6e6c80</color>
+
+</resources>

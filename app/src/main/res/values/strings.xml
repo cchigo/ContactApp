@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">ContactApp</string>
+    <string name="contact_list">CONTACT LIST</string>
+    <string name="contact_name">contact name</string>
+    <string name="contact_phone_number">Phone Number</string>
+    <string name="first_name">First Name</string>
+    <string name="last_name">Last Name</string>
+    <string name="title_activity_add_contact">activity_add_contact</string>
+    <string name="welcome">Welcome</string>
+    <string name="email">Email</string>
+    <string name="address">Address</string>
+    <string name="how_to_add_contact">Add your contact by filling in their personal information</string>
+</resources>
