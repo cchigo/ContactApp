@@ -3,6 +3,7 @@ package com.example.contactapp
 import android.content.Intent
 import android.os.Bundle
 import android.os.PersistableBundle
+import android.view.Menu
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -90,6 +91,11 @@ class ContactListActivity : AppCompatActivity() {
     override fun onStart() {
         super.onStart()
         Toast.makeText(this, "Starts", Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
     }
 
 
