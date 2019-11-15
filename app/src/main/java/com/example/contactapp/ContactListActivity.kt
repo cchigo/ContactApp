@@ -15,14 +15,15 @@ class ContactListActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_contact_list)
 
-        var contactList = ArrayList<Contact>()
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+        var contactList = ContactDatabase.getInstance(applicationContext).contactDAO().selectContact()
+
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
+//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
 
 
         if(intent != null){
@@ -33,7 +34,7 @@ class ContactListActivity : AppCompatActivity() {
             val email = intent.getStringExtra("email")
             val address = intent.getStringExtra("address")
 
-            contactList.add(Contact(firstName, lastName, phone, email, address))
+//           contactList.add(Contact(firstName, lastName, phone, email, address))
 
         }
 

@@ -21,15 +21,19 @@ class AddContactActivity : AppCompatActivity() {
             val phone = phone_id.text.toString()
             val address = address_id.text.toString()
 
+            val contact = Contact(0, firstName, lastName, email, phone, address)
+
+            ContactDatabase.getInstance(applicationContext).contactDAO().insertContact(contact)
+
 
             val intent = Intent(this@AddContactActivity, ContactListActivity::class.java)
 
-            intent.putExtra("firstName", firstName)
-            intent.putExtra("lastName", lastName)
-            intent.putExtra("email", email)
-            intent.putExtra("phone", phone)
-            intent.putExtra("email", email)
-            intent.putExtra("address", address)
+//            intent.putExtra("firstName", firstName)
+//            intent.putExtra("lastName", lastName)
+//            intent.putExtra("email", email)
+//            intent.putExtra("phone", phone)
+//            intent.putExtra("email", email)
+//            intent.putExtra("address", address)
 
 
             startActivity(intent)
