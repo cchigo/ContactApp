@@ -9,7 +9,8 @@ import android.widget.TextView
 import androidx.annotation.NonNull
 import androidx.recyclerview.widget.RecyclerView
 
-class RecyclerViewAdapter (val contacts: List<Contact>, val onItemClickListener: OnItemClickListener): RecyclerView.Adapter<RecyclerViewAdapter.ContactViewHolder>() {
+class RecyclerViewAdapter (val contacts: List<Contact>, val onItemClickListener: OnItemClickListener):
+    RecyclerView.Adapter<RecyclerViewAdapter.ContactViewHolder>() {
 
 
 

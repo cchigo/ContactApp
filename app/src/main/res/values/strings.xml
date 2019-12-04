@@ -10,4 +10,7 @@
     <string name="email">Email</string>
     <string name="address">Address</string>
     <string name="how_to_add_contact">Add your contact by filling in their personal information</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

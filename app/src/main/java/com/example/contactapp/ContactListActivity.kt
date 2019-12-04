@@ -17,15 +17,7 @@ class ContactListActivity : AppCompatActivity() {
 
         var contactList = ContactDatabase.getInstance(applicationContext).contactDAO().selectContact()
 
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-//        contactList.add(Contact("Chisom", "iwowo", "090947623145","chisom@gmail.com", "4 ijeoma street"))
-
-
+        
         if(intent != null){
 
             val firstName = intent.getStringExtra("firstName")
@@ -56,7 +48,7 @@ class ContactListActivity : AppCompatActivity() {
 
                 startActivity(intent)
 
-
+ 
             }
         })
 
@@ -70,17 +62,8 @@ class ContactListActivity : AppCompatActivity() {
         btn_newContact.setOnClickListener {
             val intent = Intent(this, AddContactActivity::class.java)
             startActivity(intent)
+
         }
-
-//        btn_newContact.setOnClickListener {
-//            val change = supportFragmentManager.beginTransaction().apply{
-//                replace(R.id.registerFragment, RegisterFragment())
-//                    .addToBackStack(null)
-//            }
-//            change.commit()
-//        }
-
-
 
     }
 

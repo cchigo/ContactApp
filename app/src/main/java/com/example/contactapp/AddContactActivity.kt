@@ -12,7 +12,6 @@ class AddContactActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_add_contact)
 
-//        Toast.makeText(this, "Oncreate", Toast.LENGTH_LONG).show()
 
         submit.setOnClickListener{
             val firstName = first_name_id.text.toString()
@@ -28,17 +27,10 @@ class AddContactActivity : AppCompatActivity() {
 
             val intent = Intent(this@AddContactActivity, ContactListActivity::class.java)
 
-//            intent.putExtra("firstName", firstName)
-//            intent.putExtra("lastName", lastName)
-//            intent.putExtra("email", email)
-//            intent.putExtra("phone", phone)
-//            intent.putExtra("email", email)
-//            intent.putExtra("address", address)
-
 
             startActivity(intent)
 
-//            Toast.makeText(this, "Register $firstName", Toast.LENGTH_LONG).show()
+
         }
 
 
