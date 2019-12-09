@@ -8,9 +8,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.fragment.app.FragmentActivity
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.contactapp.databinding.FragmentContactListBinding
+import com.example.contactapp.databinding.FragmentProfileBinding
+import com.example.contactapp.viewmodel.MyViewModel
 
 
 /**
@@ -22,45 +28,41 @@ class ContactListFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        var view =  inflater.inflate(R.layout.fragment_contact_list, container, false)
+        val binding = FragmentContactListBinding.inflate(inflater, container, false)
 
-        var contactList = ContactDatabase.getInstance(context!!).contactDAO().selectContact()
+        val model = ViewModelProviders.of(this)[MyViewModel::class.java]
 
-        val recycler: RecyclerView = view.findViewById(R.id.recycler_view_id)
-        recycler.layoutManager = LinearLayoutManager(context)
+        val recyclerView = binding.recyclerViewId
 
-        recycler.adapter = RecyclerViewAdapter(contactList, object: OnItemClickListener{
-            override fun onItemClick(contact: Contact) {
-//                val intent = Intent(this@ContactListActivity, ProfileActivity::class.java)
-//
-//                intent.putExtra("firstName", contact.firstName)
-//                intent.putExtra("lastName", contact.lastName)
-//                intent.putExtra("email", contact.email)
-//                intent.putExtra("phone", contact.phone)
-//                intent.putExtra("address", contact.address)
-//
-//                startActivity(intent)
-                val action = ContactListFragmentDirections.actionContactListFragmentToProfileFragment(contact.firstName!!, contact.lastName!!)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+
+        var adapter = RecyclerViewAdapter(object :OnItemClickListener{
+
+            override fun onItemClick(contact: Contact){
+                val action = ContactListFragmentDirections.actionContactListFragmentToProfileFragment(contact)
+
                 findNavController().navigate(action)
-
             }
+        } , model.apply {
+
         })
+        recyclerView.adapter = adapter
+
+        model.getContacts(context!!).observe(this, Observer <List<Contact>>{ contacts ->
+
+            contacts?.let {
+                adapter.contacts = contacts
+
+                adapter.notifyDataSetChanged()
 
 
+        } })
 
 
-
-        //contains id
-        val btn_newContact = view.findViewById<View>(R.id.fab_button)
-
-        btn_newContact.setOnClickListener {
+        binding.fabButton.setOnClickListener {
             findNavController().navigate(R.id.action_contactListFragment_to_addContactFragment)
-
         }
 
-        return view
+        return binding.root
     }
-
-
-
 }

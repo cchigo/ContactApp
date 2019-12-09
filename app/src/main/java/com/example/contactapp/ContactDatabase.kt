@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Contact::class], version = 1)
+@Database(entities = [Contact::class], version = 2)
 abstract class ContactDatabase: RoomDatabase() {
 
     abstract fun contactDAO(): ContactDao
@@ -19,6 +19,8 @@ abstract class ContactDatabase: RoomDatabase() {
                         .allowMainThreadQueries()
                         .build()
               return instance!!
+
+
 
           }else{
               return instance!!

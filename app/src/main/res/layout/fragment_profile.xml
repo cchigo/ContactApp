@@ -1,12 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    
+    <data>
 
+        <variable
+            name="contact"
+            type="com.example.contactapp.Contact" />
+    </data>
+    
 <ScrollView android:layout_height="match_parent"
     android:layout_width="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+   
     tools:context=".AddContactActivity">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout 
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:weightSum="8"
@@ -51,7 +60,8 @@
                             android:textSize="24dp"
                             android:textStyle="bold"
                             android:textColor="@color/blackFontColor"
-                            android:text="@string/first_name" />
+                            android:text="@{contact.firstName}"
+                            tools:text="first name" />
 
                         <TextView
                             android:id="@+id/profile_last_name"
@@ -60,7 +70,8 @@
                             android:textSize="24dp"
                             android:textStyle="bold"
                             android:textColor="@color/blackFontColor"
-                            android:text="@string/last_name" />
+                            android:text="@{contact.lastName}"
+                            tools:text="last name"/>
                     </LinearLayout>
                     <TextView
                         android:id="@+id/profile_email"
@@ -154,7 +165,7 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/contactDetailsValue"
                     android:textStyle="bold"
-                    android:text="Ahmed"
+                    android:text="user name"
                     android:textSize="16dp"/>
 
             </LinearLayout>
@@ -199,7 +210,7 @@
                         android:id="@+id/profile_phone"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="0983245273"
+                        android:text="user number"
                         android:textColor="@color/contactDetailsValue"
                         android:textSize="16dp"
                         android:textStyle="bold" />
@@ -225,10 +236,12 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/contactDetailsValue"
                     android:textStyle="bold"
-                    android:text="99 Meadow City London"
+                    android:text="user address"
                     android:textSize="16dp"/>
 
             </LinearLayout>
+            
+            
 
 
 
@@ -238,5 +251,9 @@
         </LinearLayout>
 
     </LinearLayout>
+    
+
 
 </ScrollView>
+    
+</layout>

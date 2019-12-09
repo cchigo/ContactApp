@@ -1,10 +1,22 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
 apply plugin: 'kotlin-kapt'
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
+androidExtensions {
+    experimental = true
+}
+
 android {
+    dataBinding {
+        enabled = true
+    }
+
+    
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
@@ -46,6 +58,10 @@ dependencies {
     implementation "androidx.room:room-runtime:2.2.2"
     kapt "androidx.room:room-compiler:2.2.2"
     implementation 'com.google.android.material:material:1.0.0'
+    implementation "androidx.lifecycle:lifecycle-extensions:2.1.0"
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.picasso:picasso:2.71828'
 
     def nav_version = "2.1.0"
 

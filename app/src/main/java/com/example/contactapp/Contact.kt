@@ -1,18 +1,32 @@
 package com.example.contactapp
 
+
+import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
+import kotlinx.android.parcel.Parcelize
 
 
 @Entity(tableName = "contacts")
+@Parcelize
 data class Contact (
     @PrimaryKey(autoGenerate = true)
-    val id: Int =0,
+    var id: Int =0,
+
     @ColumnInfo(name = "fname") //changes the first name col to fname
-    val firstName: String?,
-    val lastName: String?,
-    val phone: String?,
-    val email: String?,
-    val address: String? ){
-}
+    var firstName: String?,
+
+    @ColumnInfo(name = "lname")
+    var lastName: String?,
+
+    @ColumnInfo(name="PhoneNumber")
+    var phone: String?,
+
+    @ColumnInfo(name="Email")
+    var email: String?,
+
+    @ColumnInfo(name="Address")
+    var address: String?
+
+): Parcelable

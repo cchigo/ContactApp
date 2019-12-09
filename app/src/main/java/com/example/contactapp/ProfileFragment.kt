@@ -9,33 +9,27 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.navigation.fragment.navArgs
+import com.example.contactapp.databinding.FragmentProfileBinding
 import kotlinx.android.synthetic.main.fragment_profile.*
 
 class ProfileFragment : Fragment() {
-     var name: String? = null
 
     val args: ProfileFragmentArgs by navArgs()
 
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val view = inflater.inflate(R.layout.fragment_profile, container, false)
-
-        val firstName = view.findViewById<TextView>(R.id.profile_first_name)
-        val lastName = view.findViewById<TextView>(R.id.profile_last_name)
 
 
-        firstName.text = args.firstName
-        lastName.text = args.lastName
+        val binding = FragmentProfileBinding.inflate(inflater, container, false)
 
 
-        return view
+
+
+    binding.contact = args.contact
+
+        return binding.root
     }
 }

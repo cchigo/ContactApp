@@ -34,23 +34,25 @@ class ContactListActivity : AppCompatActivity() {
 
 
         val recycler: RecyclerView = findViewById(R.id.recycler_view_id)
-        recycler.layoutManager = LinearLayoutManager(this)
+        //recycler.layoutManager = LinearLayoutManager(this)
 
-        recycler.adapter = RecyclerViewAdapter(contactList, object: OnItemClickListener{
-            override fun onItemClick(contact: Contact) {
-                val intent = Intent(this@ContactListActivity, ProfileActivity::class.java)
-
-                intent.putExtra("firstName", contact.firstName)
-                intent.putExtra("lastName", contact.lastName)
-                intent.putExtra("email", contact.email)
-                intent.putExtra("phone", contact.phone)
-                intent.putExtra("address", contact.address)
-
-                startActivity(intent)
-
- 
-            }
-        })
+//        recycler.adapter = RecyclerViewAdapter(contactList, object: OnItemClickListener{
+//            override fun onItemClick(contact: Contact) {
+//                val intent = Intent(this@ContactListActivity, ProfileActivity::class.java)
+//
+//                intent.putExtra("firstName", contact.firstName)
+//                intent.putExtra("lastName", contact.lastName)
+//                intent.putExtra("email", contact.email)
+//                intent.putExtra("phone", contact.phone)
+//                intent.putExtra("address", contact.address)
+//
+//                startActivity(intent)
+//
+//
+//            }
+//        }
+//
+//        )
 
         val fragmentManager = supportFragmentManager.beginTransaction()
 

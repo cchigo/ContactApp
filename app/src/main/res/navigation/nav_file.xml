@@ -34,12 +34,7 @@
         android:label="ProfileFragment"
         tools:layout="@layout/fragment_profile">
         <argument
-            android:name="firstName"
-            app:argType="string" />
-        <argument
-            android:name="lastName"
-            app:argType="string" />
-
-
+            android:name="contact"
+            app:argType="com.example.contactapp.Contact" />
     </fragment>
 </navigation>
